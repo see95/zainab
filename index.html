@@ -86,7 +86,9 @@ button::-moz-focus-inner{border:0}
   background:radial-gradient(circle at 34% 28%,var(--wine),var(--oxblood) 62%,var(--plum));
   box-shadow:0 0 44px rgba(142,27,58,.6),inset 0 1px 0 rgba(241,220,196,.18);
   transform:scale(var(--s,1))}
-.core svg{width:26px;height:26px;fill:var(--champagne)}
+.core svg{width:44%;height:44%;overflow:visible;filter:drop-shadow(0 2px 6px rgba(58,7,20,.55));transform-origin:50% 60%;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.12)}28%{transform:scale(1)}42%{transform:scale(1.07)}56%{transform:scale(1)}}
+.hold.holding .core svg{animation-duration:.8s}
 .hold::before,.hold::after{content:"";position:absolute;inset:20%;border-radius:50%;border:1px solid var(--blush);
   animation:ping 2.6s ease-out infinite;pointer-events:none}
 .hold::after{animation-delay:1.3s}
@@ -207,7 +209,7 @@ button::-moz-focus-inner{border:0}
             <circle class="track" cx="58" cy="58" r="55"></circle>
             <circle class="prog" id="prog" cx="58" cy="58" r="55"></circle>
           </svg>
-          <span class="core" id="core"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.5 1.1 4.3 2.4.8-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+          <span class="core" id="core"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4ea"/><stop offset=".55" stop-color="#f6d3cf"/><stop offset="1" stop-color="#e8a0a8"/></linearGradient></defs><path fill="url(#hg)" d="M12 20.6c-.3 0-.6-.1-.8-.3C6.4 16.1 3 13 3 9.3 3 6.4 5.3 4.1 8.1 4.1c1.6 0 3 .7 3.9 1.9.9-1.2 2.3-1.9 3.9-1.9 2.8 0 5.1 2.3 5.1 5.2 0 3.7-3.4 6.8-8.2 11-.2.2-.5.3-.8.3z"/><path d="M6.2 8.6c.2-1.3 1.1-2.2 2.3-2.4" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.1" stroke-linecap="round"/></svg></span>
         </button>
         <p class="hint" id="hint" aria-live="polite">Press and hold to open</p>
         <p class="whisper">Something I should have said sooner.</p>
